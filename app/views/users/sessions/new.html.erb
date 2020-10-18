@@ -1,0 +1,87 @@
+<div class="content-body">
+  <div class="row">
+    <div class="col-md-6 with-marketing">
+      <div class="login-container">
+        <div class="login-content">
+          
+          <header>
+            <h1>
+              <span class="sr-only">Medidata Solutions</span>
+              <img alt="iMedidata" src="/assets/logo.png">
+            </h1>
+          </header>
+          
+          <div class="content">
+            <div class="login">
+              <div class="welcome">
+                <h3><strong>Welcome</strong></h3>
+              </div>
+              <%= render partial: 'layouts/flash_messages' %>
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-group">
+                  <%= f.label 'Username' %><br />
+                  <%= f.email_field :email, autofocus: true, placeholder: 'Enter username', autocomplete: "email", class: "form-control" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label 'Password' %><br />
+                  <%= f.password_field :password, autocomplete: "current-password", placeholder: 'Enter password', class: "form-control" %>
+                </div>
+
+                <% if devise_mapping.rememberable? %>
+                  <div class="form-group">
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %>
+                  </div>
+                <% end %>
+
+                <div class="actions">
+                  <%= f.submit "Log in", class: 'btn btn-block btn-primary'%>
+                </div>
+              <% end %>
+              <div class="forget-links">
+                <%= render "users/shared/links"  %>
+              </div>
+            </div>
+          </div>
+
+          <div class="language">
+            <label for="page_locale" id="language-label">
+            Language
+            </label>
+            <select name="locale" id="page_locale">
+              <option selected="selected" value="eng">English</option>
+            </select>
+          </div>
+          
+          <div class="small">
+            <div class="help-container">
+              <span data-content="Having other login issues? <br> Find more information here." data-html="true" data-placement="auto" data-trigger="hover" id="help_span" data-original-title="" title="">
+                <img id="help_icon" src="/assets/question.png" height="18">
+                &nbsp;
+                <a href="https://learn.mdsol.com/display/IMEDIDATAprd/Trouble+Logging+In?lang=en" onclick=" window.open(this.href, '_blank'); return false; ">Help Documentation</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="footer">
+            <div class="copy">
+              <a target="_blank" href="http://medidata.com">Medidata Solutions, Inc., <br>a Dassault Systèmes company<br></a>
+              <br>
+              <a href="https://learn.mdsol.com/display/IMEDIDATAprd/Medidata+Privacy+Policy?lang=en" target="_blank" onclick=" window.open(this.href, 'tour', 'width=820, height=600, scrollbars=yes, status=no, resizable=no, menubar=no'); return false; ">Privacy Policy</a>
+              <a href="https://learn.mdsol.com/display/IMEDIDATAprd/iMedidata+Terms+of+Use?lang=en" target="_blank" onclick=" window.open(this.href, 'tour', 'width=820, height=600, scrollbars=yes, status=no, resizable=no, menubar=no'); return false; ">Terms of Use</a>
+              <br>
+              Copyright
+              ©
+              1999-2020
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 marketing-image">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<div class="simple">
+  <div class="with-marketing">
+    <div class="login-container">
+      <div class="login-content forget-login-content">
+        <header>
+          <h1>
+            <span class="sr-only">Medidata Solutions</span>
+            <img alt="iMedidata" src="/assets/logo.png">
+          </h1>
+        </header>
+        
+        <div class="content">
+          <div class="login">
+            <div class="welcome">
+              <h4><strong>Change your password</strong></h4>
+            </div>
+
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "users/shared/error_messages", resource: resource %>
+              <%= f.hidden_field :reset_password_token %>
+
+              <div class="form-group">
+                <%= f.label :password, "New password" %><br />
+                <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+                <% end %>
+                <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :password_confirmation, "Confirm new password" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Change my password", class: "btn btn-block btn-primary" %>
+              </div>
+            <% end %>
+            
+            <div class="forget-links">
+              <%= render "users/shared/links"  %>
+            </div>
+          </div>
+        </div>
+        
+        <div class="small">
+          <div class="help-container">
+            <span data-content="Having other login issues? <br> Find more information here." data-html="true" data-placement="auto" data-trigger="hover" id="help_span" data-original-title="" title="">
+              <img id="help_icon" src="/assets/question.png" height="18">
+              &nbsp;
+              <a href="https://learn.mdsol.com/display/IMEDIDATAprd/Trouble+Logging+In?lang=en" onclick=" window.open(this.href, '_blank'); return false; ">Help Documentation</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="copy">
+            <a target="_blank" href="http://medidata.com">Medidata Solutions, Inc., <br>a Dassault Systèmes company<br></a>
+            <br>
+            <a href="https://learn.mdsol.com/display/IMEDIDATAprd/Medidata+Privacy+Policy?lang=en" target="_blank" onclick=" window.open(this.href, 'tour', 'width=820, height=600, scrollbars=yes, status=no, resizable=no, menubar=no'); return false; ">Privacy Policy</a>
+            <a href="https://learn.mdsol.com/display/IMEDIDATAprd/iMedidata+Terms+of+Use?lang=en" target="_blank" onclick=" window.open(this.href, 'tour', 'width=820, height=600, scrollbars=yes, status=no, resizable=no, menubar=no'); return false; ">Terms of Use</a>
+            <br>
+            Copyright
+            ©
+            1999-2020
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
