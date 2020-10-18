@@ -83,13 +83,9 @@ header{
 
 
 @media screen and (min-width: 480px) {
-	.language{
+	.language, .content{
 		width: 402px;
-	}
-
-	.content{
-		width: 402px;
-    	margin: 0 auto 0px;
+        margin: 0 auto 0px;
 	}
 }
 
