@@ -1,24 +1,17 @@
-# README
+Required:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  Rails : 6.0.3
+  
+  Ruby : 2.6.3
+  
+For Action Mailer config use Mailcatcher. Also change database.yml config as per your credentials
 
-Things you may want to cover:
+https://rubygems.org/gems/mailcatcher/versions/0.6.1
 
-* Ruby version
+Note :
 
-* System dependencies
+Only 'admin' role can able to login in portal. Please use below query to assign Admin role
 
-* Configuration
+user = User.find_by(email: 'YOUR-EMAIL-ID')
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+user.set_role('admin')
