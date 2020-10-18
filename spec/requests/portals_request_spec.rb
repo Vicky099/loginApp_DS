@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Portals" do
-	describe "GET #index" do
-		it "signs user in and out" do
+	describe "GET sessions#new" do
+		it "signs user in" do
 			user = create(:user)
 			
 			sign_in user
@@ -11,7 +11,7 @@ RSpec.describe "Portals" do
 		end
 
 		it "get users data" do
-			
+
 		end
 	end
 end
