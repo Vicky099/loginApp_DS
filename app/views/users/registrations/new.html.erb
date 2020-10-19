@@ -26,7 +26,11 @@
               <div class="form-group">
                 <%= f.label :password %>
                 <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                
+                  <div class="tooltip"><%= image_tag('question.png', size: '25x18')%>
+                    <span class="tooltiptext text-left">Your password has: <ul> <li>at least eight (8) characters, and</li> <li>at least one uppercase letter, one lowercase letter, and one number.</li> </ul></span>
+                  </div>
+                  
                 <% end %><br />
                 <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
               </div>
@@ -51,8 +55,9 @@
         <div class="small">
           <div class="help-container">
             <span data-content="Having other login issues? <br> Find more information here." data-html="true" data-placement="auto" data-trigger="hover" id="help_span" data-original-title="" title="">
-              <img id="help_icon" src="/assets/question.png" height="18">
-              &nbsp;
+              <div class="tooltip"><%= image_tag('question.png', size: '25x18')%>
+                <span class="tooltiptext text-left">Having other login issues? <br> Find more information here.</li> </ul></span>
+              </div>
               <a href="https://learn.mdsol.com/display/IMEDIDATAprd/Trouble+Logging+In?lang=en" onclick=" window.open(this.href, '_blank'); return false; ">Help Documentation</a>
             </span>
           </div>

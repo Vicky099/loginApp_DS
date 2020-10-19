@@ -153,3 +153,33 @@ header{
 .forget-login-content{
 	margin-bottom: 8%;
 }
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  border: 2px solid black;
+  font-size: 12px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
